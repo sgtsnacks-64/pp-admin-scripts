@@ -11,7 +11,7 @@ function Build-Name
         'rocky',
         'circular',
         'helpful',
-        'competent ',
+        'competent',
         'smelly',
         'stable',
         'grumpy',
@@ -72,7 +72,7 @@ function Build-Name
         'more interesting');
 
     $val = Get-Random -Maximum $names.Length -Minimum 0;
-    return $names[$val] + ' ' + 'Crab';
+    return "$($names[$val]) crab";
 }
 
 
@@ -85,5 +85,6 @@ switch($val){
 }
 
 $name = Build-Name;
+Write-Host "Building Trail Environment called {$name} :D";
 pac admin create --name $name --region europe --currency GBP --type Trial | Out-File .\trial-env.txt
 
